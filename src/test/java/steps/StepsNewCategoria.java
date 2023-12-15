@@ -37,7 +37,7 @@ public class StepsNewCategoria {
 
     @Quando("eu clico no botão para criar uma nova categoria")
     public void eu_clico_no_botão_para_criar_uma_nova_categoria() {
-        WebElement botaoNovaCategoria = driver.findElement(By.xpath("//button[@class='spectrum-Button spectrum-Button--sizeM spectrum-Button--cta svelte-1gv5n3y c496226559d5248bcaeace31fd2432ed4-dw6ErsKxeV-dom']"));
+        WebElement botaoNovaCategoria = driver.findElement(By.xpath("//button[@class=spectrum-Button spectrum-Button--sizeM spectrum-Button--cta svelte-1gv5n3y c496226559d5248bcaeace31fd2432ed4-UOBBr0rNfG-dom']"));
         botaoNovaCategoria.click();
     }
 

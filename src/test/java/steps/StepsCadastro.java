@@ -1,14 +1,13 @@
 package steps;
 
+import static org.junit.Assert.assertEquals;
+
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.List;
-import java.util.Map;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.pt.Dado;
@@ -16,7 +15,7 @@ import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 
 public class StepsCadastro {
-	WebDriver driver;
+	WebDriver driver = new ChromeDriver();
 	
 	@DataTableType
     public UsuarioConjunto definirUsuario(Map<String, String> entry) {
@@ -60,12 +59,12 @@ public class StepsCadastro {
         }
     }
 	
-	@Dado("que estou na página de cadastro")
+	@Dado("que estou na página de cadastro {string}")
 	public void que_estou_na_página_de_cadastro(String url) {
 		driver.get(url);
 	}
 
-	@Quando("eu clico no botão ")
+	@Quando("eu clico no botão {string}")
 	public void eu_clico_no_botão_criauser(String string) {
 		 WebElement btnSalvar = driver.findElement(By.xpath("//button[@class='spectrum-Button spectrum-Button--sizeM spectrum-Button--cta svelte-1gv5n3y cbb5a0088c01948e09e845bb3a44baed2-UNwIgTgJmM-dom']"));
 
@@ -85,7 +84,7 @@ public class StepsCadastro {
         driver.findElement(By.name("tipo")).sendKeys(usuario.getTipo());
 	}
 
-	@Quando("eu clico no botão")
+	@Quando("eu clico no botão categoria {string}")
 	public void eu_clico_no_botão(String string) {
 		 WebElement btnSalvar = driver.findElement(By.xpath("//button[@class='spectrum-Button spectrum-Button--sizeM spectrum-Button--cta svelte-1gv5n3y cbb5a0088c01948e09e845bb3a44baed2-jblCfr4zf-F701UaVaob-dom']"));
 
